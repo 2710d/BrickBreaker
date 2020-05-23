@@ -43,13 +43,13 @@ def main():
         if hit_top_wall(canvas, ball) or hit_bottom_wall(canvas, ball):
             change_y = change_y * -1
 
-        if hit_right_wall(canvas, ball) or hit_left_wall(canvas, ball):
+        elif hit_right_wall(canvas, ball) or hit_left_wall(canvas, ball):
             change_x = change_x * -1
 
-        if hit_paddle(canvas, ball, paddle):
+        elif hit_paddle(canvas, ball, paddle):
             change_y = change_y * -1
 
-        if hit_bricks(canvas, ball, bricks_list):
+        elif hit_bricks(canvas, ball, bricks_list):
             change_y = change_y * -1
 
         canvas.update()
@@ -123,7 +123,6 @@ def hit_bricks(canvas, ball, bricks_list):
             brick_hit = True
 
     return brick_hit
-
 
 def get_left_x(canvas, obj):
     return canvas.coords(obj)[0]
